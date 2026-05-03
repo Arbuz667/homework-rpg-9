@@ -1,10 +1,6 @@
 package com.narxoz.rpg.artifact;
 
-/**
- * A magical scroll containing a single spell or rune sequence.
- */
 public class Scroll extends Artifact {
-
     private final String spellName;
 
     public Scroll(String name, int value, int weight, String spellName) {
@@ -12,12 +8,10 @@ public class Scroll extends Artifact {
         this.spellName = spellName;
     }
 
-    public String getSpellName() {
-        return spellName;
-    }
+    public String getSpellName() { return spellName; }
 
     @Override
     public void accept(ArtifactVisitor visitor) {
-        // TODO: call visitor.visit(this) for double dispatch.
+        visitor.visit(this);
     }
 }
